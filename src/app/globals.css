@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ===== NEXOS Global Styles ===== */
+
+/* CSS Variables — defaults (overridden by ThemeProvider) */
+:root {
+  --color-bg: #0a0608;
+  --color-bg-secondary: #110a0e;
+  --color-bg-tertiary: #1a0f14;
+  --color-surface: #150b10;
+  --color-surface-hover: #201018;
+  --color-border: #ee2222;
+  --color-primary: #ee2222;
+  --color-primary-hover: #ff4444;
+  --color-accent: #ffcc33;
+  --color-text: #ffffff;
+  --color-text-muted: #aaaaaa;
+  --color-text-dim: #555555;
+  --color-success: #00ee88;
+  --color-warning: #ffcc33;
+  --color-danger: #ff2222;
+  --color-taskbar: rgba(10,6,8,0.97);
+  --color-window-chrome: rgba(10,6,8,0.97);
+  --color-title-bar: #150b10;
+  --font-family: 'VT323', 'Courier New', monospace;
+  --border-radius: 0px;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  image-rendering: pixelated;
+}
+
+/* ===== CRT Scanlines overlay ===== */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99997;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.12) 2px,
+    rgba(0,0,0,0.12) 4px
+  );
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-hover); }
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ===== Cursor blink ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-start infinite; }
+
+/* ===== Ticker scroll ===== */
+@keyframes ticker-scroll {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===== Pixel character walk ===== */
+@keyframes walk-across {
+  0%   { left: -80px; }
+  100% { left: calc(100vw + 80px); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-3px); }
+}
+@keyframes leg-left {
+  0%, 100% { transform: rotate(20deg); }
+  50%       { transform: rotate(-20deg); }
+}
+@keyframes leg-right {
+  0%, 100% { transform: rotate(-20deg); }
+  50%       { transform: rotate(20deg); }
+}
+
+/* ===== Window drag handle ===== */
+.window-drag-handle {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: move;
+}
+
+/* ===== Pixel font utility ===== */
+.font-pixel { font-family: 'Press Start 2P', monospace !important; }
+.font-vt { font-family: 'VT323', monospace !important; }
+
+/* ===== Glow utilities ===== */
+.glow-red  { text-shadow: 0 0 8px rgba(238,34,34,0.8); }
+.glow-yellow { text-shadow: 0 0 8px rgba(255,204,51,0.8); }
+.box-glow-red { box-shadow: 0 0 16px rgba(238,34,34,0.4); }
+
+/* ===== Monaco editor ===== */
+.monaco-editor,
+.monaco-editor-background,
+.monaco-editor .margin {
+  background: var(--color-bg) !important;
+}
+
+/* ===== Phaser canvas ===== */
+canvas { display: block; margin: 0 auto; }
+
+/* ===== Input placeholder ===== */
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-dim);
+  opacity: 1;
+}
+
+/* ===== react-rnd iframe fix ===== */
+.react-draggable-transparent-selection iframe {
+  pointer-events: none;
+}
+
+/* ===== Easter egg hover ===== */
+.easter-egg {
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.easter-egg:hover {
+  filter: brightness(1.5) drop-shadow(0 0 8px var(--color-accent));
+}
