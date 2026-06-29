@@ -6,6 +6,7 @@ export interface Mission {
   targetId: string;
   clues: string[];
   scansUsed: number;
+  targetProfile?: any;
 }
 
 export interface Target {

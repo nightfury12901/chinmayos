@@ -77,7 +77,7 @@ export class NPC extends Phaser.Physics.Arcade.Sprite {
       
       if (scene.textures.exists(texKey)) return;
 
-      const g = scene.make.graphics({x: 0, y: 0, add: false});
+      const g = scene.make.graphics({x: 0, y: 0});
       
       const cx = 16;
       const cy = 10;

@@ -90,7 +90,7 @@ export function Taskbar() {
                     🤖
                   </div>
                   <div className="flex flex-col flex-1 justify-center">
-                    <span style={{ fontSize: '14px', fontWeight: 'bold' }}>{profile?.name?.toUpperCase() || 'USER'}</span>
+                    <span style={{ fontSize: '14px', fontWeight: 'bold' }}>{profile?.username?.toUpperCase() || 'USER'}</span>
                     <span style={{ color: '#00aa00' }}>Level 7</span>
                     <div className="mt-1 flex items-center gap-2 text-[10px]">
                       <div className="flex-1 h-2 bg-[#1a2f26] border border-[#00ff00] relative">

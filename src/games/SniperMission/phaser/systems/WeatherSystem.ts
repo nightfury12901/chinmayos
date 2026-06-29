@@ -42,7 +42,7 @@ export class WeatherSystem {
       AudioManager.playRainAmbience();
       
       if (!this.scene.textures.exists('rain_drop')) {
-        const g = this.scene.make.graphics({x: 0, y: 0, add: false});
+        const g = this.scene.make.graphics({x: 0, y: 0});
         g.fillStyle(0xffffff, 0.4);
         g.fillRect(0, 0, 1, 3);
         g.generateTexture('rain_drop', 1, 3);

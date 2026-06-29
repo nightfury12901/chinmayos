@@ -49,9 +49,9 @@ export class ArmoryScene extends Phaser.Scene {
       const text = this.add.text(50, 150 + index * 50, `${prefix}${w.name}${lockStr}`, {
         fontFamily: 'VT323',
         fontSize: '32px',
-        color: isSelected ? '#00ff41' : '#00cc33',
-        alpha: isSelected ? 1 : 0.5
+        color: isSelected ? '#00ff41' : '#00cc33'
       })
+      .setAlpha(isSelected ? 1 : 0.5)
       .setInteractive({ useHandCursor: true })
       .on('pointerdown', () => {
         this.selectedIndex = index;

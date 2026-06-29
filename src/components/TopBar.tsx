@@ -33,7 +33,7 @@ export function TopBar() {
       <div className="flex gap-8 items-center h-full">
         <span style={{ color: '#00ff00' }}>NEXOS v1.0.0</span>
         <span style={{ color: '#00ff00' }}>|</span>
-        <span style={{ color: '#00ff00' }}>WELCOME BACK, {profile?.name?.toUpperCase() || 'USER'}</span>
+        <span style={{ color: '#00ff00' }}>WELCOME BACK, {profile?.username?.toUpperCase() || 'USER'}</span>
       </div>
 
       <div className="flex items-center h-full text-center" style={{ color: '#00ff00', textShadow: '0 0 5px #00ff00' }}>
@@ -41,7 +41,7 @@ export function TopBar() {
       </div>
 
       <div className="flex gap-6 items-center h-full">
-        <span style={{ color: '#00ff00' }}>USER: <span style={{ color: '#ee2222' }}>{profile?.name?.toUpperCase() || 'USER'}</span></span>
+        <span style={{ color: '#00ff00' }}>USER: <span style={{ color: '#ee2222' }}>{profile?.username?.toUpperCase() || 'USER'}</span></span>
         <span style={{ color: '#ff2afc' }}>XP: 1,240</span>
         <span style={{ color: '#ffcc00' }}>COINS: 530</span>
         <span className="flex items-center gap-2">
